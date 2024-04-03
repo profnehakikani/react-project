@@ -1,13 +1,336 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*{
+  box-sizing: border-box;
+  margin: 0px auto;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+a{
+  text-decoration: none;
+}
+
+body{
+background-color:#ffffff;
+font-family: 'Cabin';
+font-size:16px;
+color:#616161;
+line-height:1.5;
+font-weight: normal;
+}
+ul,ol{
+  padding: 0px;
+}
+.container{
+  width: 1320px;
+  margin: 0px auto;
+  padding-left:15px;
+  padding-right: 15px;
+}
+.row{
+  margin-left: -15px;
+  margin-right: -15px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.justify-content-between{
+justify-content: space-between;
+}
+.sticky{
+  position: fixed;
+  right:2%;
+  bottom:1%;
+  cursor: pointer;
+  /* animation: fadeInUp alternate infinite 1.5s ease-in-out; */
+}
+/* header */
+.align-items-center{
+  align-items: center;
+}
+.fixed{
+  width:100%;
+  position: fixed;
+  top:0%;
+  left:0%;
+  background-color:white;
+  box-shadow: 0px 12px 30px -2px rgba(0,0,0,0.6);
+}
+header{
+  background-color:white;
+  padding-top:20px;
+padding-bottom:20px;
+padding-left:12px;
+width:100%;
+  z-index: 5555;
+  box-shadow:0px 12px 30px -2px rgba(0,0,0,0.2);
+}
+.logo{
+width:15%;
+}
+.logo img{
+max-width:100%;
+height:auto;
+}
+nav ul {
+  display:flex ;
+}
+nav ul li{
+  list-style: none;
+}
+nav ul li a {
+  text-decoration: none;
+  color: black;
+  padding: 0px 20px;
+  font-size: 16px;
+  font-family: 'Cabin';
+  font-weight: 500;
+  display: block;
+}
+nav ul li.active a{
+  color:maroon;
+  position:relative;
+}
+nav ul li a:hover{
+color:#8bb4cd;
+transition:all 0.3 ease;
+}
+nav ul li a :hover::after{
+width:100%;
+transition:all 0.3 ease;
+}
+.dropdown{
+  position: relative;
+  z-index: 999;
+}
+.dropdown-menu{
+  background-color:#8bb4cd;
+  position: absolute;
+  border-radius:10px;
+  min-width:220px;
+  max-width: 280px;
+  padding:10px 0px;
+  top:100%;
+  opacity: 0;
+  visibility: hidden;
+  box-shadow:0px 12px 30px -2px rgba(0,0,0,0.2);
+}
+.dropdown .dropdown-menu a{
+  color:rgb(252, 248, 248);
+  font-family: 'Cabin';
+  text-transform:capitalize;
+  font-size:16px;
+  line-height: 35px;
+  font-weight:500;
+  transition:all 1s ;
+}
+.dropdown:hover .dropdown-menu{
+  opacity: 1;
+  visibility: visible;
+  transform:all 0.3 ease-in-out;
+}
+.dropdown-menu a:hover{
+  transform: translatex(10px);
+  color: maroon;
+}
+/* social icon */
+.serch ul li{
+  list-style: none;
+}
+.serch ul{
+  display: flex;
+}
+.serch ul li a{
+  font-size: 16px;
+  padding:0px 10px;
+  display:block;
+  color: maroon;
+}
+.serch ul li a:hover{
+color:#8bb4cd ;
+}
+
+
+/* card section  */
+/* img1111 */
+.py-100{
+  padding-top: 100px;
+  /* padding-bottom: 100px; */
+}
+.order .container{
+  position: relative;
+}
+.order .box{
+  flex-basis:24%;
+  position: relative;
+  cursor: pointer;
+}
+.order .box img{
+  max-width: 100%;
+  height: auto;
+}
+.overlay{
+  position: absolute;
+  width:100%;
+  height: 257.31px;
+  top:0%;
+  right: 0%;
+  bottom: 0%;
+  left: 0%;
+  overflow: hidden;
+  visibility: hidden;
+  background-color:black;
+}
+.box:hover .overlay{
+  visibility: visible;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+.order .box .overlay{
+  position: absolute;
+  top:0%;
+  left:0%;
+}
+.order-text h2{
+  top:30%;
+  left: 16%;
+  right: 0%;
+  bottom: 0%;
+  position: absolute;
+  color:white;
+  font-family:montserrat;
+  font-size: 40px;
+  line-height: 1.5;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.order-text h4{
+  top:50%;
+  left:14%;
+  color: white;
+  font-size: 15px;
+  position: absolute;
+  padding-top: 8px;
+  font-family: 'Cabin';
+}
+
+/* welcome  */
+
+/* .sea-food{
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+  text-align: center;
+}
+.tittle span{
+  font-size: 40px;
+  color: maroon;
+  font-family: caveat;
+}
+.tittle h2{
+  font-size: 40px;
+  font-family: 'Cabin';
+  text-transform: uppercase;
+  font-weight: 200;
+  padding-bottom: 50px;
+}
+.sea-food .seafood1{
+  width: 40%;
+  height: 400px;
+  background-image: url('../img/map.webp');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  float: left;
+  text-align: left;
+  padding: 40px;
+}
+.seafood1 h2{
+  color: white;
+  font-family: 'Cabin';
+  font-size: 40px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+.seafood1 p{
+  font-size: 21px;
+  color: white;
+  margin-bottom: 30px;
+  font-family: 'Cabin';
+  font-weight: 100;
+  letter-spacing: 0.3px;
+}
+.seafood1 .btn{
+  text-align: left !important;
+}
+.seafood1 .btn:hover{
+  border: 2px solid white;
+}
+.sea-food .seafood2{
+  width: 60%;
+  height: 400px;
+  background-image: url('../img/post-9.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  right: 0;
+} */
+
+/* full service  */
+.full-service{
+  text-align: center;
+}
+.fulltext span{
+  font-size: 40px;
+  font-family:caveat;
+  color: maroon;
+}
+.fulltext h2{
+  font-size: 40px;
+  font-family: 'Cabin';
+  text-transform: uppercase;
+  font-weight: 200;
+  padding-bottom: 50px;
+}
+.full-service .fullbox{
+  flex-basis:24%;
+  position: relative;
+  cursor: pointer;
+}
+.full-service .fullbox img{
+  max-width: 100%;
+  height: auto;
+}
+.overlay2{
+  position: absolute;
+  width:100%;
+  height:291.3px;
+  top:0%;
+  right: 0%;
+  bottom: 0%;
+  left: 0%;
+  overflow: hidden;
+  visibility: hidden;
+  background-color:#8bb4cd;
+}
+.fullbox:hover .overlay2{
+  visibility: visible;
+  opacity: 0.8;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+.full-service .fullbox .overlay2{
+  position: absolute;
+  top:0%;
+  left:0%;
+}
+.full-text h2{
+  top:40%;
+  left: 5%;
+  right: 0%;
+  bottom: 0%;
+  position: absolute;
+  color:white;
+  font-family:montserrat;
+  font-size: 40px;
+  line-height: 1.2;
+  font-weight: 300;
+  text-transform: uppercase;
 }
